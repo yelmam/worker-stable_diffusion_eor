@@ -40,7 +40,7 @@ MODEL_CACHE = "diffusers-cache"
 class Predictor:
     '''Predictor class for StableDiffusion-v1'''
 
-    def __init__(self, model_tag="runwayml/stable-diffusion-v1-5"):
+    def __init__(self, model_tag="stablediffusionapi/edge-of-realism"):
         '''
         Initialize the Predictor class
         '''
