@@ -17,8 +17,8 @@ def upload_or_base64_encode(file_name, img_path):
     """
     Uploads image to S3 bucket if it is available, otherwise returns base64 encoded image.
     """
-    if os.environ.get('BUCKET_ENDPOINT_URL', False):
-        return upload_file_to_bucket(file_name, img_path)
+    #if os.environ.get('BUCKET_ENDPOINT_URL', False):
+    #    return upload_file_to_bucket(file_name, img_path)
 
     with open(img_path, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
