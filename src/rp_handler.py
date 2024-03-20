@@ -39,6 +39,13 @@ def run(job):
         return {"error": validated_input['errors']}
     validated_input = validated_input['validated_input']
 
+    # Download input objects
+    validated_input['init_image'], validated_input['mask'] = rp_download.download_files_from_urls(
+        job['id'],
+        [validated_input.get('init_image', None), validated_input.get(
+            'mask', None)]
+    )  # pylint: disable=unbalanced-tuple-unpacking
+
     MODEL.NSFW = validated_input.get('nsfw', True)
 
     if validated_input['seed'] is None:
